@@ -1,117 +1,97 @@
-# ❤️ Heart Disease Prediction (Machine Learning)
+# ❤️ Heart Disease Prediction App
 
-A machine learning project that predicts whether a person has a high chance of heart disease based on common medical features.  
-This project uses data preprocessing, EDA, and a Random Forest model with very high accuracy.
-
----
-
-## ⭐ Features of This Project
-- Cleaned and processed healthcare dataset  
-- Data visualization (EDA)  
-- Multiple ML models tested  
-- Random Forest selected as the best model  
-- Saved model + scaler as `.pkl` files  
-- Interactive Streamlit web app  
-- Ready for deployment on Streamlit Cloud  
+A **Random Forest-based machine learning app** to predict the risk of heart disease using patient health data. Built with **Python**, **scikit-learn**, and **Streamlit** for a modern and interactive user interface.  
 
 ---
 
-## 📂 Project Structure
+## Features
 
-healthcare-heart/
-│── processed.ipynb # Data cleaning + preprocessing
-│── model_training.ipynb # ML model training + evaluation
-│── heart_rf_model.pkl # Final saved Random Forest model
-│── scaler.pkl # Scaler for input normalization
-│── healthcare_processed.csv # Preprocessed dataset
-│── app.py # Streamlit web application
-│── requirements.txt # Dependencies
-└── README.md # Project documentation
-
+- Predict heart disease risk based on 14+ health features  
+- Modern, aesthetic Streamlit interface with sliders, dropdowns, and radio buttons  
+- Provides prediction along with confidence level  
+- Uses a trained **Random Forest Classifier**  
+- Fully preprocessed data pipeline for accurate predictions  
 
 ---
 
-## 🧠 ML Models Used
+## Dataset
 
-| Model                | Accuracy |
-|----------------------|----------|
-| Logistic Regression  | ~85%     |
-| Random Forest        | ~99%     |
-
-✔ **Random Forest is used as the final model**  
-✔ Very high accuracy and stable predictions  
-
----
-
-## 🔍 What the Project Does
-- Loads healthcare heart-disease dataset  
-- Cleans the data  
-- Encodes & scales features  
-- Splits data into training/testing  
-- Tests two ML models  
-- Saves best model as `.pkl`  
-- Builds a Streamlit interface for predictions  
+- Original dataset: `heart.csv`  
+- Preprocessing includes:  
+  - Removing duplicate rows  
+  - One-hot encoding categorical features  
+  - Converting boolean columns to 0/1  
+  - Scaling continuous numeric columns (optional for Random Forest)  
+- Final processed dataset: `processed_heart.csv`  
 
 ---
 
-## 📊 Exploratory Data Analysis (EDA)
-The project includes the following visualizations:
+## Requirements
 
-- Correlation heatmap  
-- Target distribution  
-- Age distribution  
-- Cholesterol distribution  
-- Resting BP distribution  
-- Oldpeak boxplot  
-- Feature importance bar chart  
-- Pairplot  
+- Python 3.8+  
+- Install required packages:
 
-These help understand which features contribute the most to heart disease.
+```bash
+pip install pandas numpy scikit-learn streamlit joblib
+```
 
 ---
 
-## 🧪 Model Output
-The model predicts:
+## Project Structure
 
-- **1 → High chance of heart disease**  
-- **0 → Low chance of heart disease**  
-
-
-
-## 🚀 How to Run This Project Locally
-
-### 1️⃣ Install dependencies:
-
-### 2️⃣ Run the Streamlit app:
-
-
-Your browser will open the app automatically.
+```
+heart-disease-prediction/
+│
+├── heart.csv                # Original dataset
+├── processed_heart.csv      # Cleaned & preprocessed dataset
+├── heart_rf_model.pkl       # Trained Random Forest model
+├── 01_data_preprocessing.py # Preprocessing script/notebook
+├── model_training.py        # Model training and evaluation script
+├── app.py                   # Streamlit app for live prediction
+└── README.md                # Project documentation
+```
 
 
-## 🌐 Deployment (Streamlit Cloud)
 
-how to deploy this project:
+## How to Run
 
-1. Push all files to GitHub  
-2. Open Streamlit Cloud  
-3. Connect your GitHub repo  
-4. Select `app.py`  
-5. Add `requirements.txt`  
-6. Deploy 🚀  
+1. **Preprocess the dataset (optional)**  
 
----
+```bash
+python 01_data_preprocessing.py
+```
 
-## 🛠 Tech Stack
-- Python  
-- Pandas  
-- NumPy  
-- Scikit-learn  
-- Matplotlib  
-- Seaborn  
-- Streamlit  
-- Joblib  
+2. **Train the Random Forest model (optional)**  
 
----
+```bash
+python model_training.py
+```
+
+3. **Run the Streamlit app**  
+
+```bash
+streamlit run app.py
+
+
+4. **Enter your health details** in the app and click **Predict Heart Disease Risk**.  
+
+
+
+## Model Evaluation
+
+- **Accuracy:** ~73% on test data  
+- Balanced performance for both classes (heart disease and no heart disease)  
+- Confusion matrix shows good precision and recall for both classes  
+
+
+
+## Future Improvements
+
+- Hyperparameter tuning of Random Forest for higher accuracy  
+- Dark mode and custom themes in the Streamlit app  
+- Deploy the app online for public access  
+- Add probability bar charts or risk levels for better visualization  
+
 
 ## 👨‍🎓 Author
 **Lalit Shinde**  
